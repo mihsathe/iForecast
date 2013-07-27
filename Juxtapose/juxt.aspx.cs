@@ -9,6 +9,8 @@ using System.Linq;
 
 public partial class juxt : System.Web.UI.Page
 {
+    public string json = "1";
+
     protected void Page_Load(object sender, EventArgs e)
     {
         string title1 = Request["s1"];
@@ -29,6 +31,6 @@ public partial class juxt : System.Web.UI.Page
         double[] dat2 = rect2_temp.Select(x => double.Parse(x.Split(new char[] { ',' })[1])).ToArray();
 
         Juxtapose jux = new Juxtapose(dat1, dat2, threshold);
-        Response.Write(jux.GetJSON());
+        json = jux.GetJSON();
     }
 }
