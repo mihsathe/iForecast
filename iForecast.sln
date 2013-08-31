@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "iForecast", ".", "{9DF9F7C5-3145-44C8-AC21-37A4BB14AD4F}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
 		Debug.AspNetCompiler.VirtualPath = "/iForecast"
 		Debug.AspNetCompiler.PhysicalPath = "..\iForecast\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\iForecast\"
