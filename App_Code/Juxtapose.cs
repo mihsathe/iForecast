@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
 
@@ -25,16 +24,16 @@ public class Juxtapose
 
     public Match[] Operate() 
     {
-        LinkedList<Match> lst = new LinkedList<Match>();
+        List<Match> lst = new List<Match>();
 
         int len = ser1.Length < ser2.Length ? ser1.Length : ser2.Length;
         Match prev = null;
 
         for (int i = 0; i < len; i++) {
             prev = new Match(ser1[i], ser2[i], prev, thr);
-            lst.AddLast(prev);
+            lst.Add(prev);
         }
 
-        return lst.ToArray<Match>();
+        return lst.ToArray();
     }
 }
