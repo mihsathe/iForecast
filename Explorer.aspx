@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Explorer.aspx.cs" Inherits="Explorer" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Explorer.aspx.cs" Inherits="Explorer" %>
 
 <!DOCTYPE html>
 
@@ -29,6 +29,9 @@
         }
     </style>
     <script>
+        $(function(){
+          info("books");
+        })
         function info(title) {
             $("#board").load("Data/" + title + "/index.html");
                
