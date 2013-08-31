@@ -18,7 +18,7 @@
         }
         .title {
             font-family: Calibri;
-            font-size: 24px;
+            font-size: 20px;
             padding: 10px;
         }
         #left, #right {
