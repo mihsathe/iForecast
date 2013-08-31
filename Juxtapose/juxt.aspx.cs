@@ -6,9 +6,17 @@ using System.Web.UI.WebControls;
 using System.IO;
 
 
+
 public partial class juxt : System.Web.UI.Page
 {
     public string json = "1";
+
+    public string[] SubArray(string[] data, int index, int length)
+    {
+        string[] result = new string[length];
+        Array.Copy(data, index, result, 0, length);
+        return result;
+    }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,7 +31,7 @@ public partial class juxt : System.Web.UI.Page
         string[] rec1 = file1.Split(new char[] { '\n' });
         string[] rec2 = file2.Split(new char[] { '\n' });
 
-        string[] rect1_temp = rec1.SubArray(1, rec1.Length - 2);
+        string[] rect1_temp = SubArray(rec1, 1, rec1.Length - 2);
         List<double> dat1 = new List<double>();
         foreach (var x in rect1_temp)
         {
@@ -31,7 +39,7 @@ public partial class juxt : System.Web.UI.Page
         }
 
 
-        string[] rect2_temp = rec2.SubArray(1, rec1.Length - 2);
+        string[] rect2_temp = SubArray(rec2, 1, rec1.Length - 2);
         List<double> dat2 = new List<double>();
         foreach (var x in rect2_temp)
         {
