@@ -4,7 +4,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-using System.Linq;
 
 
 public partial class juxt : System.Web.UI.Page
@@ -25,12 +24,21 @@ public partial class juxt : System.Web.UI.Page
         string[] rec2 = file2.Split(new char[] { '\n' });
 
         string[] rect1_temp = rec1.SubArray(1, rec1.Length - 2);
-        double[] dat1 = rect1_temp.Select(x => double.Parse(x.Split(new char[] { ',' })[1])).ToArray();
+        List<double> dat1 = new List<double>();
+        foreach (var x in rect1_temp)
+        {
+            dat1.Add(double.Parse(x.Split(new char[] { ',' })[1]));
+        }
+
 
         string[] rect2_temp = rec2.SubArray(1, rec1.Length - 2);
-        double[] dat2 = rect2_temp.Select(x => double.Parse(x.Split(new char[] { ',' })[1])).ToArray();
+        List<double> dat2 = new List<double>();
+        foreach (var x in rect2_temp)
+        {
+            dat2.Add(double.Parse(x.Split(new char[] { ',' })[1]));
+        }
 
-        Juxtapose jux = new Juxtapose(dat1, dat2, threshold);
+        Juxtapose jux = new Juxtapose(dat1.ToArray(), dat2.ToArray(), threshold);
         json = jux.GetJSON();
     }
 }
